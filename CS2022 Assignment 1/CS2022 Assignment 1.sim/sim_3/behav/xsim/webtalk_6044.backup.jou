@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Feb 11 11:46:56 2019
+# Process ID: 6044
+# Current directory: U:/VHDL Test/CS2022 Assignment 1/CS2022 Assignment 1/CS2022 Assignment 1.sim/sim_3/behav/xsim
+# Command line: wbtcv.exe -mode batch -source U:/VHDL Test/CS2022 Assignment 1/CS2022 Assignment 1/CS2022 Assignment 1.sim/sim_3/behav/xsim/xsim.dir/mux8_16bit_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: U:/VHDL Test/CS2022 Assignment 1/CS2022 Assignment 1/CS2022 Assignment 1.sim/sim_3/behav/xsim/webtalk.log
+# Journal file: U:/VHDL Test/CS2022 Assignment 1/CS2022 Assignment 1/CS2022 Assignment 1.sim/sim_3/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source U:/VHDL -notrace
