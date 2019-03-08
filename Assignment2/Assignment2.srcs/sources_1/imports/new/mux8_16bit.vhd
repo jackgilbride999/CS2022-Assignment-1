@@ -27,5 +27,5 @@ else in4 after delay when s0='1' and s1='0' and s2='0'
 else in5 after delay when s0='1' and s1='0' and s2='1'
 else in6 after delay when s0='1' and s1='1' and s2='0'
 else in7 after delay when s0='1' and s1='1' and s2='1'
-else "0000000000000000" after delay;
+else "UUUUUUUUUUUUUUUU" after delay;
 end Behavioral;

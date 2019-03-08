@@ -13,5 +13,5 @@ constant delay: Time := 1 ns;
 begin
 Z <=in0 after delay when s='0'
 else in1 after delay when s='1'
-else "0000000000000000" after delay;
+else "UUUUUUUUUUUUUUUU" after delay;
 end Behavioral;
