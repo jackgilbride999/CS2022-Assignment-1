@@ -6,7 +6,8 @@ entity ripple_adder_16bit is
            Y : in STD_LOGIC_VECTOR (15 downto 0);
            c_in : in STD_LOGIC;
            G : out STD_LOGIC_VECTOR (15 downto 0);
-           c_out : out STD_LOGIC);
+           c_out : out STD_LOGIC;
+           V : out STD_LOGIC);
 end ripple_adder_16bit;
 
 architecture Behavioral of ripple_adder_16bit is
@@ -163,6 +164,9 @@ adder15: full_adder port map(
  in1 => Y(15),
  c_in => c14,
  sum => G(15),
- c_out => c_out
+ c_out => c15
 );
+
+c_out <= c15;
+V <= c14 xor c15;
 end Behavioral;

@@ -19,7 +19,8 @@
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
     <Option Name="TargetLanguage" Val="VHDL"/>
     <Option Name="BoardPart" Val=""/>
-    <Option Name="ActiveSimSet" Val="register_file_sim"/>
+    <Option Name="SourceMgmtMode" Val="DisplayOnly"/>
+    <Option Name="ActiveSimSet" Val="datapath_sim"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
@@ -32,7 +33,7 @@
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
-    <Option Name="WTXSimLaunchSim" Val="14"/>
+    <Option Name="WTXSimLaunchSim" Val="62"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -213,6 +214,7 @@
       </Config>
     </FileSet>
     <FileSet Name="mux2_16_bit_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/mux2_16_bit_sim">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/mux2_16_bit_sim/new/mux2_16bit_tb.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -229,6 +231,7 @@
       </Config>
     </FileSet>
     <FileSet Name="mux8_16bit_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/mux8_16bit_sim">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/mux8_16bit_sim/new/mux8_16bit_tb.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -245,6 +248,7 @@
       </Config>
     </FileSet>
     <FileSet Name="reg16_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/reg16_sim">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/reg16_sim/new/reg16_tb.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -261,6 +265,7 @@
       </Config>
     </FileSet>
     <FileSet Name="register_file_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/register_file_sim">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/register_file_sim/new/registerfile_tb.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -270,6 +275,243 @@
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="registerfile_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="zero_detector_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/zero_detector_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/zero_detector_sim/new/zero_detector_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="zero_detector_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="mux2_1bit_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/mux2_1bit_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/mux2_1bit_sim/new/mux2_1bit_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="mux2_1bit_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="mux3_1bit_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/mux3_1bit_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/mux3_1bit_sim/new/mux3_1bit_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="mux3_1bit_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="mux4_1bit_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/mux4_1bit_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/mux4_1bit_sim/new/mux4_1bit_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="mux4_1bit_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="shifter_unit_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/shifter_unit_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/shifter_unit_sim/new/shifter_unit_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="shifter_unit_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="B_input_logic_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/B_input_logic_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/B_input_logic_sim/new/B_input_logic_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="B_input_logic_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="logic_circuit_bitslice_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/logic_circuit_bitslice_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/logic_circuit_bitslice_sim/new/logic_circuit_bitslice_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="logic_circuit_bitslice_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="logic_circuit_16bits_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/logic_circuit_16bits_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/logic_circuit_16bits_sim/new/logic_circuit_16bits_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="logic_circuit_16bits_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="full_adder_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/full_adder_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/full_adder_sim/new/full_adder_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="full_adder_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="ripple_adder_16bit_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/ripple_adder_16bit_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/ripple_adder_16bit_sim/new/ripple_adder_16bit_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="ripple_adder_16bit_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="arithmetic_circuit_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/arithmetic_circuit_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/arithmetic_circuit_sim/new/arithmetic_circuit_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="arithmetic_circuit_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="alu_16bit_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/alu_16bit_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/alu_16bit_sim/new/alu_16bit_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="alu_16bit_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="functional_unit_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/functional_unit_sim">
+      <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/functional_unit_sim/new/functional_unit_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="functional_unit_tb"/>
+        <Option Name="TopLib" Val="xil_defaultlib"/>
+        <Option Name="TransportPathDelay" Val="0"/>
+        <Option Name="TransportIntDelay" Val="0"/>
+        <Option Name="SrcSet" Val="sources_1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="datapath_sim" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/datapath_sim">
+      <File Path="$PSRCDIR/datapath_sim/new/datapath_tb.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <Config>
+        <Option Name="DesignMode" Val="RTL"/>
+        <Option Name="TopModule" Val="datapath_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>

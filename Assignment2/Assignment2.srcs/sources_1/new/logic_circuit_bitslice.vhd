@@ -31,7 +31,7 @@ begin
 -- Signal Assignments
 A_and_B <= Ai and Bi;
 A_or_B <= Ai or Bi;
-A_xor_B <= Ai or Bi;
+A_xor_B <= Ai xor Bi;
 not_A <= not Ai;
 
 -- PORT MAP

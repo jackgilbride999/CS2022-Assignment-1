@@ -9,6 +9,6 @@ end zero_detector_16bit;
 architecture Behavioral of zero_detector_16bit is
 constant delay: Time := 1 ns;
 begin
-Z <= '1' after delay when G="00000000000000000"
+Z <= '1' after delay when G="0000000000000000"
         else '0' after delay;
 end Behavioral;

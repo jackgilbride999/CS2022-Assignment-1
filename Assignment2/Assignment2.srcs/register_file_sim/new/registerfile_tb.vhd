@@ -48,10 +48,10 @@ begin
 clk <= '0';
 
 load_enable <= '1';
-data <= "0000000100100111";
+data <= "0000000100100011";
 D_select <= "000";
 A_select <= "000";
--- on the next rising edge, 0x1234 should be seen on A_data
+-- on the next rising edge, 0x0123 should be seen on A_data
 
 wait for clk_period;
 clk <= '1';
@@ -59,7 +59,7 @@ clk <= '1';
 wait for clk_period;
 clk <= '0';
 
-data <= "0111010100100001";
+data <= "0100001100100001";
 D_select <= "001";
 B_select <= "001";
 -- on the next rising edge, 0x4321 should be seen on B_data
@@ -73,7 +73,8 @@ clk <= '0';
 data <= A_data;
 D_select <= "010";
 B_select <= "010";
--- on the next rising edge, 0x1234 should be seen on B_data (register transfer)
+-- on the next rising edge, 0x0123 should be seen on B_data (register transfer)
+-- B_data will be unknown until the rising edge if there is no value in reg2 already
 
 wait for clk_period;
 clk <= '1';
@@ -82,7 +83,7 @@ wait for clk_period;
 clk <= '0';
 
 load_enable <= '0';
-data <= B_data;
+data <= "0111011101110111";
 D_select <= "010";
 B_select <= "010";
 -- on the next rising edge there should be no change as load enable is false
@@ -98,6 +99,7 @@ data <= "1111111111111111";
 D_select <= "111";
 A_select <= "111";
 -- on the next rising edge 0xFFFF should be seen on A_data
+-- A_data will be unknown until the rising edge if there is no value in reg7 already
 
 wait for clk_period;
 clk <= '1';

@@ -8,7 +8,8 @@ entity arithmetic_circuit is
            s0 : in STD_LOGIC;
            s1 : in STD_LOGIC;
            G : out STD_LOGIC_VECTOR (15 downto 0);
-           c_out : out STD_LOGIC);
+           c_out : out STD_LOGIC;
+           V : out STD_LOGIC);
 end arithmetic_circuit;
 
 architecture Behavioral of arithmetic_circuit is
@@ -24,7 +25,8 @@ component ripple_adder_16bit port(
            Y : in STD_LOGIC_VECTOR (15 downto 0);
            c_in : in STD_LOGIC;
            G : out STD_LOGIC_VECTOR (15 downto 0);
-           c_out : out STD_LOGIC);
+           c_out : out STD_LOGIC;
+           V : out STD_LOGIC);
 end component;
 
 signal Y : STD_LOGIC_VECTOR (15 downto 0);
@@ -41,8 +43,10 @@ adder: ripple_adder_16bit port map(
  Y => Y,
  c_in => c_in,
  G => G, 
- c_out => c_out
+ c_out => c_out,
+ V => V
  );
-
+ 
+ 
 
 end Behavioral;

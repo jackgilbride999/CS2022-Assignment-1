@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/Arithmetic Circuit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity arithmetic_circuit
+INFO: [VRFC 10-163] Analyzing VHDL file "U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/functional_unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity functional_unit
+INFO: [VRFC 10-163] Analyzing VHDL file "U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/functional_unit_sim/new/functional_unit_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity functional_unit_tb

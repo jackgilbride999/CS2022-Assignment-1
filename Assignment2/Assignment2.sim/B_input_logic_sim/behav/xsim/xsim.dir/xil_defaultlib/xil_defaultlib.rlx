@@ -1,0 +1,24 @@
+0.6
+2018.2
+Jun 14 2018
+20:41:02
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/B_input_logic_sim/new/B_input_logic_tb.vhd,1552555850,vhdl,,,,b_input_logic_tb,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/imports/new/16_bit_reg.vhd,1552039982,vhdl,,,,reg16,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/imports/new/decoder_3to8.vhd,1552039973,vhdl,,,,decoder_3to8,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/imports/new/mux2_16bit.vhd,1552044304,vhdl,,,,mux2_16bit,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/imports/new/mux8_16bit.vhd,1552045291,vhdl,,,,mux8_16bit,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/imports/new/register_file.vhd,1551970690,vhdl,,,,register_file,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/Arithmetic Circuit.vhd,1551963383,vhdl,,,,arithmetic_circuit,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/B_input_logic.vhd,1551094991,vhdl,,,,b_input_logic,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/alu_16bit.vhd,1551965810,vhdl,,,,alu_16bit,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/datapath.vhd,1552039388,vhdl,,,,datapath,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/full_adder.vhd,1551962498,vhdl,,,,full_adder,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/functional_unit.vhd,1551973463,vhdl,,,,functional_unit,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/logic_circuit_16bits.vhd,1551964021,vhdl,,,,logic_circuit_16bits,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/logic_circuit_bitslice.vhd,1550489693,vhdl,,,,logic_circuit_bitslice,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/mux2_1bit.vhd,1551962516,vhdl,,,,mux2_1bit,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/mux3_1bit.vhd,1551966964,vhdl,,,,mux3_1bit,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/mux4_1bit.vhd,1551962538,vhdl,,,,mux4_1bit,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/ripple_adder_16bit.vhd,1551093715,vhdl,,,,ripple_adder_16bit,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/shifter_unit.vhd,1551967987,vhdl,,,,shifter_unit,,,,,,,,
+U:/VHDL Test/CS2022 Assignment 1/Assignment2/Assignment2.srcs/sources_1/new/zero_detector_16bit.vhd,1552468627,vhdl,,,,zero_detector_16bit,,,,,,,,

@@ -23,7 +23,8 @@ component alu_16bit port(
     s2 : in STD_LOGIC;
     c_in : in STD_LOGIC;
     c_out : out STD_LOGIC;
-    G : out STD_LOGIC_VECTOR (15 downto 0));
+    G : out STD_LOGIC_VECTOR (15 downto 0);
+    V : out STD_LOGIC);
 end component;
 
 -- Shifter
@@ -60,9 +61,10 @@ alu : alu_16bit port map(
     s0=>FS(1),
     s1=>FS(2),
     s2=>FS(3),
-    c_in=>FS(4),
+    c_in=>FS(0),
     c_out=>C,
-    G=>alu_out);
+    G=>alu_out,
+    V => V);
 
 -- Shifter
 shifter : shifter_unit port map(
@@ -77,7 +79,7 @@ shifter : shifter_unit port map(
 muxF : mux2_16bit port map(
     in0=>alu_out,
     in1=>shifter_out,
-    s=>FS(0),
+    s=>FS(4),
     Z=>F);
 
 -- Zero Detector
@@ -87,7 +89,4 @@ zero_detect : zero_detector_16bit port map(
     
 -- Negative flag
 N<=alu_out(15);
-
--- Overflow flag
-V<=alu_out(15) xor alu_out(14);
 end Behavioral;

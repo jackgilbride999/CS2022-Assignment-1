@@ -9,7 +9,8 @@ entity alu_16bit is
            s2 : in STD_LOGIC;
            c_in : in STD_LOGIC;
            c_out : out STD_LOGIC;
-           G : out STD_LOGIC_VECTOR (15 downto 0));
+           G : out STD_LOGIC_VECTOR (15 downto 0);
+           V : out STD_LOGIC);
 end alu_16bit;
 
 architecture Behavioral of alu_16bit is
@@ -28,7 +29,8 @@ component arithmetic_circuit port(
        s0 : in STD_LOGIC;
        s1 : in STD_LOGIC;
        G : out STD_LOGIC_VECTOR (15 downto 0);
-       c_out : out STD_LOGIC);
+       c_out : out STD_LOGIC;
+       V : out STD_LOGIC);
 end component;
 
 component mux2_16bit port(
@@ -47,14 +49,22 @@ mux: mux2_16bit port map(
    s => s2,
    Z => G
 );
+
+-- note: the arithmetic circuit and lower layers were
+-- written with s0 set where s1 should be set and vice 
+-- versa. Quick fix: Use the port map to fix this without
+-- having to rewrite lower layers and re-test
+-- this solution works fine as alu_16_bit_tb works as 
+-- expected
 arithmetic_unit: arithmetic_circuit port map(
    c_in => c_in,
    A => A,
    B =>B,
-   s0 =>s0,
-   s1 =>s1,
+   s0 =>s1,
+   s1 =>s0,
    G => arithmetic_G,
-   c_out => c_out
+   c_out => c_out,
+   V => V
 );
 logic_unit: logic_circuit_16bits port map(
   A => A,
