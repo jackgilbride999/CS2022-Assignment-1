@@ -81,9 +81,11 @@ clk <= '0';
 write <= '1';
 D_address <= "000";
 data_in <= "0000000000000000";
+constant_in <= "1111111111111111";
 A_address <= "000";
 B_address <= "000";
 MB_select <= '0';
+MD_select <= '1';
 
 -- rising edge
 wait for clk_period;
@@ -92,6 +94,8 @@ clk <= '1';
 -- falling edge
 wait for clk_period;
 clk <= '0';
+-- display a constant in on data out
+MB_select <= '1';
 
 -- rising edge
 wait for clk_period;
