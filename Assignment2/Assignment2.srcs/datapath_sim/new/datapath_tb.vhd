@@ -77,15 +77,13 @@ clk <= '1';
 -- falling edge
 wait for clk_period;
 clk <= '0';
--- write value to register 0 and display it on address out
+-- write value to register 0 and display it on data out
 write <= '1';
+MD_select <= '1';
 D_address <= "000";
 data_in <= "0000000000000000";
-constant_in <= "1111111111111111";
-A_address <= "000";
-B_address <= "000";
 MB_select <= '0';
-MD_select <= '1';
+B_address <= "000";
 
 -- rising edge
 wait for clk_period;
@@ -94,96 +92,107 @@ clk <= '1';
 -- falling edge
 wait for clk_period;
 clk <= '0';
--- display a constant in on data out
+-- write a value to register 1 and display it on data out
+D_address <= "001";
+data_in <= "0000000000000001";
+MB_select <= '0';
+B_address <= "001";
+
+-- rising edge
+wait for clk_period;
+clk <= '1';
+
+-- falling edge
+wait for clk_period;
+clk <= '0';
+-- transfer the value in R1 into R2; R1=0x0001
+D_address <= "010";
+A_address <= "001";
+MD_select <= '0';
+FS <= "00000";
+
+-- rising edge
+wait for clk_period;
+clk <= '1';
+
+-- falling edge
+wait for clk_period;
+clk <= '0';
+-- view output of previous operation on data out
+write <= '0';
+MB_select <= '0';
+B_address <= "010";
+
+-- rising edge
+wait for clk_period;
+clk <= '1';
+
+-- falling edge
+wait for clk_period;
+clk <= '0';
+-- increment R1 into R3; R2=0x0002
+D_address <= "011";
+A_address <= "001";
+write <= '1';
+FS <= "00001";
+
+-- rising edge
+wait for clk_period;
+clk <= '1';
+
+-- falling edge
+wait for clk_period;
+clk <= '0';
+-- view output of previous operation on data out
+write <= '0';
+MB_select <= '0';
+B_address <= "011";
+
+-- rising edge
+wait for clk_period;
+clk <= '1';
+
+-- falling edge
+wait for clk_period;
+clk <= '0';
+-- add R2 and R3 into R4; R4=0x0003
+D_address <= "100";
+A_address <= "010";
+B_address <= "011";
+write <= '1';
+FS <= "00010";
+
+-- rising edge
+wait for clk_period;
+clk <= '1';
+
+-- falling edge
+wait for clk_period;
+clk <= '0';
+-- view output of previous operation on data out
+write <= '0';
+MB_select <= '0';
+B_address <= "100";
+
+-- rising edge
+wait for clk_period;
+clk <= '1';
+
+--- All operations provide expected output so far. ---
+--- As each of the components were tested ---
+--- individually, we know that they work. ---
+--- The tests above show that the port maps --
+--- between signals and the working components ---
+--- in the datapath was successful. All that is ---
+--- left to show is how to show constant_in on ---
+--- data_out. ---
+
+-- falling edge
+wait for clk_period;
+clk <= '0';
+--- write the value of constant in to data out
 MB_select <= '1';
-
--- rising edge
-wait for clk_period;
-clk <= '1';
-
--- falling edge
-wait for clk_period;
-clk <= '0';
-
--- rising edge
-wait for clk_period;
-clk <= '1';
-
--- falling edge
-wait for clk_period;
-clk <= '0';
-
--- rising edge
-wait for clk_period;
-clk <= '1';
-
--- falling edge
-wait for clk_period;
-clk <= '0';
-
--- rising edge
-wait for clk_period;
-clk <= '1';
-
--- falling edge
-wait for clk_period;
-clk <= '0';
-
--- rising edge
-wait for clk_period;
-clk <= '1';
-
--- falling edge
-wait for clk_period;
-clk <= '0';
-
--- rising edge
-wait for clk_period;
-clk <= '1';
-
--- falling edge
-wait for clk_period;
-clk <= '0';
-
--- rising edge
-wait for clk_period;
-clk <= '1';
-
--- falling edge
-wait for clk_period;
-clk <= '0';
-
--- rising edge
-wait for clk_period;
-clk <= '1';
-
--- falling edge
-wait for clk_period;
-clk <= '0';
-
--- rising edge
-wait for clk_period;
-clk <= '1';
-
--- falling edge
-wait for clk_period;
-clk <= '0';
-
--- rising edge
-wait for clk_period;
-clk <= '1';
-
--- falling edge
-wait for clk_period;
-clk <= '0';
-
--- rising edge
-wait for clk_period;
-clk <= '1';
-
--- falling edge
-wait for clk_period;
-clk <= '0';
+constant_in <= "1111111111111111";
 
 -- rising edge
 wait for clk_period;
