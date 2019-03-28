@@ -19,7 +19,7 @@ component memory_512_16bit port(
    data_out : out STD_LOGIC_VECTOR (15 downto 0));
 end component;
 
--- define a clock period long enough for the mux to run
+-- define a clock period long enough for the memory unit to run
 constant clk_period: Time := 5 ns;
 
 begin
