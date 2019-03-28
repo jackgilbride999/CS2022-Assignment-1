@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Final_Implementation.srcs/sources_1/imports/sources_1/new/B_input_logic.vhd" \
+"../../../../Final_Implementation.srcs/sources_1/imports/sources_1/new/mux2_1bit.vhd" \
+"../../../../Final_Implementation.srcs/Datapath_Simulations/imports/Assignment2.srcs/B_input_logic_sim/new/B_input_logic_tb.vhd" \
+
+# Do not sort compile order
+nosort
