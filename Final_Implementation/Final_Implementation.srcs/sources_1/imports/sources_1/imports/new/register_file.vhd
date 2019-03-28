@@ -5,9 +5,9 @@ entity register_file is
     Port (  load_enable : in STD_LOGIC;
             clk : in STD_LOGIC;
             data : in STD_LOGIC_VECTOR(15 downto 0);
-            A_select : in STD_LOGIC_VECTOR(2 downto 0);
-            B_select : in STD_LOGIC_VECTOR(2 downto 0);
-            D_select : in STD_LOGIC_VECTOR(2 downto 0);
+            A_select : in STD_LOGIC_VECTOR(3 downto 0); -- changed 28/03/19
+            B_select : in STD_LOGIC_VECTOR(3 downto 0); -- changed 28/03/19
+            D_select : in STD_LOGIC_VECTOR(3 downto 0); -- changed 28/03/19
             A_data : out STD_LOGIC_VECTOR(15 downto 0);
             B_data : out STD_LOGIC_VECTOR(15 downto 0));
 end register_file;
@@ -63,6 +63,7 @@ signal select_r4 : STD_LOGIC;
 signal select_r5 : STD_LOGIC;
 signal select_r6 : STD_LOGIC;
 signal select_r7 : STD_LOGIC;
+signal select_r8 : STD_LOGIC; -- added 28/03/19
 
 -- load registers
 signal load_r0 : STD_LOGIC;
@@ -73,6 +74,7 @@ signal load_r4 : STD_LOGIC;
 signal load_r5 : STD_LOGIC;
 signal load_r6 : STD_LOGIC;
 signal load_r7 : STD_LOGIC;
+signal load_r8 : STD_LOGIC; -- added 28/03/19
 
 -- register outputs
 signal out_r0 : STD_LOGIC_VECTOR(15 downto 0);
@@ -83,7 +85,11 @@ signal out_r4 : STD_LOGIC_VECTOR(15 downto 0);
 signal out_r5 : STD_LOGIC_VECTOR(15 downto 0);
 signal out_r6 : STD_LOGIC_VECTOR(15 downto 0);
 signal out_r7 : STD_LOGIC_VECTOR(15 downto 0);
+signal out_r8 : STD_LOGIC_VECTOR(15 downto 0); -- added 28/03/19
 
+-- addtional outputs, added 28/03/19
+signal muxA_out : STD_LOGIC_VECTOR(15 downto 0);
+signal muxB_out : STD_LOGIC_VECTOR(15 downto 0);
 begin
 
 -- destination register selection
@@ -195,4 +201,14 @@ muxB : mux8_16bit port map(
     s1 => B_select(1),
     s2 => B_select(2),
     Z => B_data);
+    
+-- added 28/03/19 - decide between output of R8 and muxA
+mux2A : mux2_16bit port map(
+
+);
+
+-- added 28/03/19 - decide between output of R8 and muxB
+mux2B : mux2_16bit port map(
+
+);
 end Behavioral;
