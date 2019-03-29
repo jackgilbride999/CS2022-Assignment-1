@@ -22,11 +22,12 @@ component reg16 port(
     Q : out STD_LOGIC_VECTOR(15 downto 0));
 end component;
 
--- 3 to 8 decoder
-component decoder_3to8 port(
+-- 4 to 16 decoder
+component decoder_4to16 port(
     A0: in STD_LOGIC;
     A1: in STD_LOGIC;
     A2: in STD_LOGIC;
+    A3 : in STD_LOGIC;
     Q0 : out STD_LOGIC;
     Q1 : out STD_LOGIC;
     Q2 : out STD_LOGIC;
@@ -34,7 +35,15 @@ component decoder_3to8 port(
     Q4 : out STD_LOGIC;
     Q5 : out STD_LOGIC;
     Q6 : out STD_LOGIC;
-    Q7 : out STD_LOGIC);
+    Q7 : out STD_LOGIC;
+    Q8 : out STD_LOGIC;
+    Q9 : out STD_LOGIC;
+    Q10 : out STD_LOGIC;
+    Q11 : out STD_LOGIC;
+    Q12 : out STD_LOGIC;
+    Q13 : out STD_LOGIC;
+    Q14 : out STD_LOGIC;
+    Q15 : out STD_LOGIC);
 end component;
 
 -- 8 to 1 line multiplexer
@@ -51,6 +60,14 @@ component mux8_16bit port(
     s1  : in STD_LOGIC;
     s2  : in STD_LOGIC;
     Z   : out STD_LOGIC_VECTOR(15 downto 0));
+end component;
+
+-- 2 to 1 multiplexer
+component mux2_16bit port(
+    in0 : in STD_LOGIC_VECTOR(15 downto 0);
+    in1 : in STD_LOGIC_VECTOR(15 downto 0);
+    s : in STD_LOGIC;
+    Z : out STD_LOGIC_VECTOR(15 downto 0));
 end component;
 
 -- SIGNALS
@@ -93,10 +110,11 @@ signal muxB_out : STD_LOGIC_VECTOR(15 downto 0);
 begin
 
 -- destination register selection
-decoder : decoder_3to8 port map(
-    A0 => D_select(0),
-    A1 => D_select(1),
-    A2 => D_select(2),
+decoder : decoder_4to16 port map(
+    A0 => D_select(3),
+    A1 => D_select(2),
+    A2 => D_select(1),
+    A3 => D_select(0),
     Q0 => select_r0,
     Q1 => select_r1,
     Q2 => select_r2,
@@ -104,7 +122,15 @@ decoder : decoder_3to8 port map(
     Q4 => select_r4,
     Q5 => select_r5,
     Q6 => select_r6,
-    Q7 => select_r7);
+    Q7 => select_r7,
+    Q8 => select_r8,
+    Q9 => select_r8,
+    Q10 => select_r8,
+    Q11 => select_r8,
+    Q12 => select_r8,
+    Q13 => select_r8,
+    Q14 => select_r8,
+    Q15 => select_r8);
     
 -- destination register selection AND load signal
 load_r0 <= select_r0 and load_enable;
@@ -115,6 +141,7 @@ load_r4 <= select_r4 and load_enable;
 load_r5 <= select_r5 and load_enable;
 load_r6 <= select_r6 and load_enable;
 load_r7 <= select_r7 and load_enable;
+load_r8 <= select_r8 and load_enable; -- added 29/03/19
 
 -- register 0
 reg0 : reg16 port map(
@@ -171,7 +198,14 @@ reg7 : reg16 port map(
     load => load_r7,
     clk => clk,
     Q => out_r7);
-    
+
+-- temp register, added 29/03/19
+reg8: reg16 port map(
+    D=> data,
+    load => load_r8,
+    clk => clk,
+    Q => out_r8);
+        
 -- select source address A
 muxA : mux8_16bit port map(
     in0 => out_r0,
@@ -182,10 +216,10 @@ muxA : mux8_16bit port map(
     in5 => out_r5,
     in6 => out_r6,
     in7 => out_r7,
-    s0 => A_select(0),
+    s0 => A_select(2),
     s1 => A_select(1),
-    s2 => A_select(2),
-    Z => A_data);
+    s2 => A_select(0),
+    Z => muxA_out);
     
 -- select source address B
 muxB : mux8_16bit port map(
@@ -197,18 +231,24 @@ muxB : mux8_16bit port map(
     in5 => out_r5,
     in6 => out_r6,
     in7 => out_r7,
-    s0 => B_select(0),
+    s0 => B_select(2),
     s1 => B_select(1),
-    s2 => B_select(2),
-    Z => B_data);
+    s2 => B_select(0),
+    Z => muxB_out);
     
 -- added 28/03/19 - decide between output of R8 and muxA
 mux2A : mux2_16bit port map(
-
+    in0 => muxA_out,
+    in1 => out_r8,
+    s => A_select(3),
+    Z => A_data
 );
 
 -- added 28/03/19 - decide between output of R8 and muxB
 mux2B : mux2_16bit port map(
-
+    in0 => muxB_out,
+    in1 => out_r8,
+    s => B_select(3),
+    Z => B_data
 );
 end Behavioral;

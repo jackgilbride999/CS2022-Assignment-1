@@ -1,6 +1,6 @@
 Vivado Simulator 2018.2
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto a08140444d68416aa2f3ba807e8494b2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot B_input_logic_tb_behav xil_defaultlib.B_input_logic_tb -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto a08140444d68416aa2f3ba807e8494b2 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot registerfile_tb_behav xil_defaultlib.registerfile_tb -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -10,7 +10,10 @@ Time Resolution for simulation is 1ps
 Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
-Compiling architecture behavioral of entity xil_defaultlib.mux2_1bit [mux2_1bit_default]
-Compiling architecture behavioral of entity xil_defaultlib.B_input_logic [b_input_logic_default]
-Compiling architecture test of entity xil_defaultlib.b_input_logic_tb
-Built simulation snapshot B_input_logic_tb_behav
+Compiling architecture behavioral of entity xil_defaultlib.decoder_4to16 [decoder_4to16_default]
+Compiling architecture behavioral of entity xil_defaultlib.reg16 [reg16_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux8_16bit [mux8_16bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.mux2_16bit [mux2_16bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.register_file [register_file_default]
+Compiling architecture test of entity xil_defaultlib.registerfile_tb
+Built simulation snapshot registerfile_tb_behav

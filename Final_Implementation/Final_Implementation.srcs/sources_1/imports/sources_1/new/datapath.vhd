@@ -25,9 +25,9 @@ component register_file port(
     load_enable : in STD_LOGIC;
     clk : in STD_LOGIC;
     data : in STD_LOGIC_VECTOR(15 downto 0);
-    A_select : in STD_LOGIC_VECTOR(2 downto 0);
-    B_select : in STD_LOGIC_VECTOR(2 downto 0);
-    D_select : in STD_LOGIC_VECTOR(2 downto 0);
+    A_select : in STD_LOGIC_VECTOR(3 downto 0);
+    B_select : in STD_LOGIC_VECTOR(3 downto 0);
+    D_select : in STD_LOGIC_VECTOR(3 downto 0);
     A_data : out STD_LOGIC_VECTOR(15 downto 0);
     B_data : out STD_LOGIC_VECTOR(15 downto 0));
 end component;
