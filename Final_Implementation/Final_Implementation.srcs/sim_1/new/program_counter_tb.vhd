@@ -25,7 +25,7 @@ component program_counter port(
 end component;
 
 -- define a clock period long enough for the pc to run
-constant clk_period: Time := 5 ns;
+constant clk_period: Time := 15 ns;
 
 begin
 -- Instansiate the Unit Under Test (UUT)
@@ -40,6 +40,61 @@ uut: program_counter port map (
 -- begin process
 stim_proc : process
 begin
+-- Let the output be undefined for a few cycles
+-- while the inputs have no value
+clk <= '0';
+
+wait for clk_period;
+clk <= '1';
+
+wait for clk_period;
+clk <= '0';
+-- output should still be undefined as PL = 0
+address <= X"00AA";
+
+wait for clk_period;
+clk <= '1';
+
+wait for clk_period;
+clk <= '0';
+-- load the value on the next HIGH
+PL <= '1';
+
+wait for clk_period;
+clk <= '1';
+
+wait for clk_period;
+clk <= '0';
+-- increment for the next few clock cycles
+PL <= '0';
+PI <= '1';
+
+wait for clk_period;
+clk <= '1';
+
+wait for clk_period;
+clk <= '0';
+
+wait for clk_period;
+clk <= '1';
+
+wait for clk_period;
+clk <= '0';
+
+wait for clk_period;
+clk <= '1';
+
+wait for clk_period;
+clk <= '0';
+-- load in one more value to test
+PL <= '1';
+PI <= '0';
+address <= X"0010";
+
+wait for clk_period;
+clk <= '1';
+
+wait for clk_period;
 
 end process;
 end Test;
