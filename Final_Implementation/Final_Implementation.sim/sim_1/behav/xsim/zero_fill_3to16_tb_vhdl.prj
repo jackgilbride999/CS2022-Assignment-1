@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Final_Implementation.srcs/sources_1/new/zero_fill_3to16.vhd" \
+"../../../../Final_Implementation.srcs/sim_1/new/zero_fill_3to16_tb.vhd" \
+
+# Do not sort compile order
+nosort
