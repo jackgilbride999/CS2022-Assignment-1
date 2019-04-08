@@ -15,7 +15,7 @@ component zero_fill_3to16 port(
     out_16bits : out STD_LOGIC_VECTOR(15 downto 0));
 end component;
 
--- define a clock period long enough for the mux to run
+-- define a clock period long enough for the zero fill to run
 constant clk_period: Time := 2 ns;
 
 begin
@@ -30,28 +30,28 @@ begin
 wait for clk_period;
 -- the output should always be 0s followed by the input,
 -- so test for different inputs
-in_3bits <= "000";
+in_3bits <= "000000";
 
 wait for clk_period;
-in_3bits <= "001";
+in_3bits <= "000001";
 
 wait for clk_period;
-in_3bits <= "010";
+in_3bits <= "000010";
 
 wait for clk_period;
-in_3bits <= "011";
+in_3bits <= "011111";
 
 wait for clk_period;
-in_3bits <= "100";
+in_3bits <= "100000";
 
 wait for clk_period;
-in_3bits <= "101";
+in_3bits <= "101010";
 
 wait for clk_period;
-in_3bits <= "110";
+in_3bits <= "111110";
 
 wait for clk_period;
-in_3bits <= "111";
+in_3bits <= "111111";
 
 end process;
 end Test;
