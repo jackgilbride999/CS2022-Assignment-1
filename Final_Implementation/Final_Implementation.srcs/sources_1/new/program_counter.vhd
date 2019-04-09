@@ -6,6 +6,7 @@ entity program_counter is
            PL : in STD_LOGIC;
            PI : in STD_LOGIC;
            clk : in STD_LOGIC;
+           reset : in STD_LOGIC;
            PC_out : out STD_LOGIC_VECTOR (15 downto 0));
 end program_counter;
 
@@ -45,8 +46,10 @@ adder : ripple_adder_16bit port map(
     Y => X"0001",
     c_in => '0',
     G => adder_out);
-    
-register_in <= adder_out after delay when PI='1'
+
+   
+register_in <= "0000000000000000" after delay when reset = '1'
+else adder_out after delay when PI='1'
 else address after delay when PL ='1';
 
 PC_out <= register_out;
