@@ -81,6 +81,13 @@ signal select_r5 : STD_LOGIC;
 signal select_r6 : STD_LOGIC;
 signal select_r7 : STD_LOGIC;
 signal select_r8 : STD_LOGIC; -- added 28/03/19
+signal select_r9 : STD_LOGIC;
+signal select_r10 : STD_LOGIC;
+signal select_r11 : STD_LOGIC;
+signal select_r12 : STD_LOGIC;
+signal select_r13 : STD_LOGIC;
+signal select_r14 : STD_LOGIC;
+signal select_r15 : STD_LOGIC;
 
 -- load registers
 signal load_r0 : STD_LOGIC;
@@ -124,13 +131,13 @@ decoder : decoder_4to16 port map(
     Q6 => select_r6,
     Q7 => select_r7,
     Q8 => select_r8,
-    Q9 => select_r8,
-    Q10 => select_r8,
-    Q11 => select_r8,
-    Q12 => select_r8,
-    Q13 => select_r8,
-    Q14 => select_r8,
-    Q15 => select_r8);
+    Q9 => select_r9,
+    Q10 => select_r10,
+    Q11 => select_r11,
+    Q12 => select_r12,
+    Q13 => select_r13,
+    Q14 => select_r14,
+    Q15 => select_r15);
     
 -- destination register selection AND load signal
 load_r0 <= select_r0 and load_enable;
@@ -141,7 +148,7 @@ load_r4 <= select_r4 and load_enable;
 load_r5 <= select_r5 and load_enable;
 load_r6 <= select_r6 and load_enable;
 load_r7 <= select_r7 and load_enable;
-load_r8 <= select_r8 and load_enable; -- added 29/03/19
+load_r8 <= (select_r8 or select_r9 or select_r10 or select_r11 or select_r12 or select_r13 or select_r14 or select_r15) and load_enable; -- added 29/03/19
 
 -- register 0
 reg0 : reg16 port map(

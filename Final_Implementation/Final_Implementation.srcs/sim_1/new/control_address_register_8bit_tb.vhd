@@ -12,7 +12,7 @@ signal load_address : STD_LOGIC;
 signal clk : STD_LOGIC;
 signal address_out : STD_LOGIC_VECTOR (7 downto 0);
 
--- define the component to tst
+-- define the component to test
 component control_address_register_8bit port(
    in_address : in STD_LOGIC_VECTOR (7 downto 0);
    load_address : in STD_LOGIC;

@@ -8,9 +8,9 @@ entity datapath is
            data_in : in STD_LOGIC_VECTOR (15 downto 0);
            clk : in STD_LOGIC;
            write : in STD_LOGIC;
-           D_address : in STD_LOGIC_VECTOR(2 downto 0);
-           A_address : in STD_LOGIC_VECTOR(2 downto 0);
-           B_address : in STD_LOGIC_VECTOR(2 downto 0);
+           D_address : in STD_LOGIC_VECTOR(3 downto 0);
+           A_address : in STD_LOGIC_VECTOR(3 downto 0);
+           B_address : in STD_LOGIC_VECTOR(3 downto 0);
            FS : in STD_LOGIC_VECTOR(4 downto 0);
            address_out : out STD_LOGIC_VECTOR (15 downto 0);
            data_out : out STD_LOGIC_VECTOR (15 downto 0);

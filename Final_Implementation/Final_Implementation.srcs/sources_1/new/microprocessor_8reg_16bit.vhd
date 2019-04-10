@@ -19,9 +19,9 @@ component datapath Port(
     data_in : in STD_LOGIC_VECTOR (15 downto 0);
     clk : in STD_LOGIC;
     write : in STD_LOGIC;
-    D_address : in STD_LOGIC_VECTOR(2 downto 0);
-    A_address : in STD_LOGIC_VECTOR(2 downto 0);
-    B_address : in STD_LOGIC_VECTOR(2 downto 0);
+    D_address : in STD_LOGIC_VECTOR(3 downto 0);
+    A_address : in STD_LOGIC_VECTOR(3 downto 0);
+    B_address : in STD_LOGIC_VECTOR(3 downto 0);
     FS : in STD_LOGIC_VECTOR(4 downto 0);
     address_out : out STD_LOGIC_VECTOR (15 downto 0);
     data_out : out STD_LOGIC_VECTOR (15 downto 0);
@@ -142,6 +142,7 @@ signal muxm_out : STD_LOGIC_VECTOR(15 downto 0);
 signal zero_fill_out : STD_LOGIC_VECTOR(15 downto 0);
 signal sign_extend_out : STD_LOGIC_VECTOR(15 downto 0);
 signal pc_out : STD_LOGIC_VECTOR(15 downto 0);
+signal datapath_address_out : STD_LOGIC_VECTOR(15 downto 0);
 
 signal V : STD_LOGIC;
 signal C : STD_LOGIC;
@@ -239,11 +240,17 @@ datapath16bit : datapath port map(
     B_address(3) => TB,
     B_address(2 downto 0) => SB,
     FS => FS,
-    address_out => address_out,
+    address_out => datapath_address_out,
     data_out => data_out,
     V => V,
     C => C,
     N => N,
     Z => Z);
+    
+muxM : mux2_16bit port map(
+    in0 => datapath_address_out,
+    in1 => pc_out,
+    s => MM,
+    Z => address_out);
     
 end Behavioral;
