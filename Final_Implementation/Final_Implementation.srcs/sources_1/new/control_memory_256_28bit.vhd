@@ -36,8 +36,8 @@ memory_m: process(IN_CAR)
         "1100000000100000000011100100", -- NOT
         "1100000000100000000000100100", -- ADD
         "1100000000100010000000000000", -- Unconditional jump (i.e. set PL)
-        X"0000000", --8
-        X"0000000", --9
+        "1100000011000000000000000000", -- BCS, i.e if carry set increment CAR, otherwise IF 
+        "1100000000100010000000000000", -- Jump microcode for BCS
         X"0000000", --A
         X"0000000", --B
         X"0000000", --C

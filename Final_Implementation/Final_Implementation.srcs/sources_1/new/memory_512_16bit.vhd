@@ -1,6 +1,5 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
---use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity memory_512_16bit is
@@ -15,6 +14,15 @@ constant delay: Time := 1 ns;
 type mem_array is array(0 to 511) of STD_LOGIC_VECTOR(15 downto 0);
 begin
 memory_m: process(MW, address)
+-- memory is initialised as blank, below shows sample instructions that can be loaded in
+-- Opcodes; ADI : 2, LD : 3, ST : 4, INC : 5, NOT : 6, ADD : 7, Jump : 8, Branch Carry Set
+-- ADI DR, SA, OP e.g. ADI R7, R7, #1 = 00000010 111 111 001
+-- LD DR, SA e.g. LD R1, R2 = 00000011 001 010 000
+-- ST DR, SA e.g. ST R1, R2 = 00000100 001 010 000
+-- INC DR, SA e.g. INC R6, R7 = 00000101 110 111 000
+-- NOT DR, SA e.g. NOT R5, R5 = 00000110 101 101 000
+-- B ADL, SA, ADR e.g. B R0, #+63 = 00000111 111 000 111 as 2_111111 = 63
+-- BCS ADL, SA, ADR e.g. BCS R0, #+7 = 00001000 000 000 111 as 2_000111 = 7
 variable data_mem : mem_array :=(
         -- 0
         X"0000", -- 0
